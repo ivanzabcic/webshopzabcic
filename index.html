@@ -195,6 +195,51 @@ span.psw {
      width: 100%;
   }
 }
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: dodgerblue;
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
 </style>
 </head>
 <body>
@@ -217,6 +262,7 @@ span.psw {
   </div> 
   <a href="#kosarica">Košarica</a>
   <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+  <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>
 </div>
 
 <p>
@@ -253,8 +299,8 @@ Za ostatak Republike Hrvatske rok dostave 3-5 dana<br>
     </div>
 
     <div class="container">
-      <label for="uname"><b>Korisničko ime</b></label>
-      <input type="text" placeholder="Unesite korisničko ime" name="uname" required>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Unesite email" name="email" required>
 
       <label for="psw"><b>Lozinka</b></label>
       <input type="password" placeholder="Unesite lozinku" name="psw" required>
@@ -270,6 +316,37 @@ Za ostatak Republike Hrvatske rok dostave 3-5 dana<br>
       <span class="psw">Zaboravili ste <a href="#">lozinku?</a></span>
     </div>
   </form>
+</div>
+
+<div id="id02" class="modal">
+	<form class="modal-content animate" action="/action:page.php" method="post">
+	<div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+	<div class="container">
+		
+		<label for="email"><b>Email</b></label>
+		<input type="text" placeholder="Unesite email" name="email" id="email" required>
+
+		<label for="psw"><b>Lozinka</b></label>
+		<input type="password" placeholder="Unesite lozinku" name="psw" id="psw" required>
+
+		<label for="psw-repeat"><b>Repeat Password</b></label>
+		<input type="password" placeholder="Ponovite lozinku" name="psw-repeat" id="psw-repeat" required>
+		
+		<p>Kreiranjem računa na ovoj stranici pristajete na naša <a href="#">Pravila o privatnosti i sigurnosti podataka</a>.</p>
+
+		<button type="submit">Register</button>
+	  </div>
+	  
+	  <div class="container signin">
+		<p>Već imate račun? <button onclick="document.getElementById('id01').style.display='block';document.getElementById('id02').style.display='none'" style="width:auto;">Login</button></p>
+	  </div>
+	  
+	<div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+	</div>
+	  </form>
 </div>
   
 <script>
